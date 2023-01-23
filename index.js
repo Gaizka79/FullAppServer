@@ -25,6 +25,10 @@ app.use(express.static(path.join(__dirname, './client/build')));
 
 app.use('/', routesUser);
 
+app.get("/", (req, res) => {
+    res.send("Hello from my server!!")
+})
+
 app.get('/api', (req, res) => {
     console.log("Solicitud recibida");
     res.status(200).json({ message: "Kaixo munduari!" })
