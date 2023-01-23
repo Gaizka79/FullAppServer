@@ -7,6 +7,7 @@ const connectDB = require('./server/config/mongoConfig');
 const routesUser = require('./server/routes/routesUser');
 
 const PORT = process.env.PORT || 5000;
+const URI = process.env.MONGO_URI
 
 const cors = require('cors');
 const morgan = require('./server/middlewares/morganConfig');
@@ -36,7 +37,7 @@ app.get('/api', (req, res) => {
 
 app.listen(PORT, async () => {
     try {
-        await connectDB(process.env.MONGO_URI)
+        await connectDB(URI)
         console.log(`Server listening in port ${PORT}...`)
     } catch (error) {
         console.log(`Error: ${error}`);
