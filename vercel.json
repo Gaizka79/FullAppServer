@@ -4,6 +4,6 @@
       "use": "@vercel/node"}
     ],
     "rewrites": [
-      {"source": "/(.*)", "dest": "/users"}
+      {"source": "/(.*)", "destination": "/users"}
     ]
   }
